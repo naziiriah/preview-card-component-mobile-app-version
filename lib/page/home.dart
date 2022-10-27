@@ -1,3 +1,5 @@
+ // ignore_for_file: prefer_const_constructors
+
  import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -10,6 +12,20 @@ class Home extends StatefulWidget {
  class _HomeState extends State<Home> {
    @override
    Widget build(BuildContext context) {
-     return Container();
+     return Scaffold(
+      backgroundColor: Colors.amberAccent,
+      body: SafeArea(
+        child: Column(
+          children: <Widget>[
+            TextButton.icon(
+              onPressed: () {
+                Navigator.pushNamed(context, '/location');
+              },
+              icon: Icon(Icons.edit_location),
+              label: Text("Edit Location")),
+              
+          ],
+        )),
+     );
    }
  }
